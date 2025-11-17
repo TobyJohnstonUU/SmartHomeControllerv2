@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHomeController
 {
-    public class SmartLight
+    public class SmartLight : SmartDevice
     {
         // Private fields
         private double brightness;
@@ -25,7 +25,11 @@ namespace SmartHomeController
         }
 
         // Constructor
-        
+        SmartLight(int deviceID, string deviceName, double brightness, string colour) : base(deviceID, deviceName)
+        {
+            this.Brightness = brightness;
+            this.Colour = colour;
+        }
 
 
         public void SetBrightness(double brightness)
